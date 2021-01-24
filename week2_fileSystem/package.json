@@ -1,0 +1,29 @@
+{
+  "name": "week2_filesystem",
+  "version": "1.0.0",
+  "description": "sample file application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sureyaF/COMP3133_LabExcerises.git"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "Angular",
+    "Express",
+    "http"
+  ],
+  "author": "Sureya Farah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sureyaF/COMP3133_LabExcerises/issues"
+  },
+  "homepage": "https://github.com/sureyaF/COMP3133_LabExcerises#readme",
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}
