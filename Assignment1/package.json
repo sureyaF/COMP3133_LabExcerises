@@ -1,0 +1,27 @@
+{
+  "name": "Assignment1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.17",
+    "@babel/node": "^7.12.17",
+    "@babel/preset-env": "^7.12.17"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.21.0",
+    "graphql": "^15.5.0",
+    "mongoose": "^5.11.17",
+    "natives": "^1.1.6",
+    "pkill": "^2.0.0",
+    "v8flags": "^3.2.0"
+  }
+}

@@ -1,0 +1,19 @@
+<h1 style="color: rgb(53, 96, 145);">SpaceX Mission Launch List</h1>
+
+  <div class="card" style="width: 50%;" *ngFor="let data of dataList">
+    <img class="card-img-top" style="width: 30%;"src= {{data.links.mission_patch_small}} >
+    <div class="card-body" >
+      <h5 class="card-title">{{data.mission_name}}</h5>
+      <p class="card-text">{{data.details}}</p>
+    </div>
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item">{{data.launch_year}}</li>
+     
+    </ul>
+    <div class="card-body" >
+      <a [routerLink]="['/missiondetails', data.flight_number]" routerLinkActive="active"class="card-link" >View Details</a>
+     
+    </div>
+  </div>
+   
+

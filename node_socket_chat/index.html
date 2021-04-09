@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Hello world</title>
+
+</head>
+
+<body>
+   <div id="error-container"></div>
+   <input id="name" type="text" name="name" value="" placeholder="Enter your name!">
+   <button type="button" name="button" onclick="setUsername()">
+      Let me chat!
+   </button>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+   var socket = io();
+   function setUsername() {
+      // creeates a username in the text bock
+      socket.emit('setUsername', document.getElementById('name').value);
+   };
+
+   socket.on('userExists', function (data) {
+      document.getElementById('error-container').innerHTML = data;
+   });
+   var user;
+   socket.on('userSet', function (data) {
+      user = data.username;
+      document.body.innerHTML = '<input type = "text" onkeydown = "sendTyping(true)" onkeyup = "sendTyping(false)" id = "message">\
+         <button type = "button" name = "button" onclick = "sendMessage()">Send</button>\
+         <div id = "message-container"></div> <h3 id="typing-status">Typing status</h3> typing...';
+   });
+   function sendTyping(status) {
+      socket.emit("typing", status)
+   }
+   socket.on('show-typing', (status) => {
+      var typingStatus = document.getElementById("typing-status")
+      typingStatus.innerHTML = ""
+      if (data.status) {
+         typingStatus.innerHTML = `${data.name}typing...`
+      }
+   })
+   var typing = false;
+    var timeout = undefined;
+   function timeoutFunction() {
+      typing = false;
+      socket.emit(noLongerTypingMessage);
+   }
+   function onKeyDownNotEnter() {
+      if (typing == false) {
+         typing = true
+         socket.emit(typingMessage);
+         timeout = setTimeout(timeoutFunction, 5000);
+      } else {
+         clearTimeout(timeout);
+         timeout = setTimeout(timeoutFunction, 5000);
+      }
+   }
+   function sendMessage() {
+      var msg = document.getElementById('message').value;
+      if (msg) {
+         socket.emit('msg', { message: msg, user: user });
+      }
+   }
+   socket.on('newmsg', function (data) {
+      if (user) {
+         document.getElementById('message-container').innerHTML += '<div><b>' +
+            data.user + '</b>: ' + data.message + '</div>'
+      }
+   })
+</script>
+
+
+</html>

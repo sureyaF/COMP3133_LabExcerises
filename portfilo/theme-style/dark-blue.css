@@ -1,0 +1,10 @@
+:root {
+    --borderColor: #0a1447;
+    --mainColor: #15202B;
+    --secondColor: #1e3142;
+    --mainFont: #fff;
+    --secondFont: #eeeeee;
+    --themeBorder: #FFF;
+    --previewBg: rgb(29 41 53 / 80%);
+    --previewShadow: #436689;
+}

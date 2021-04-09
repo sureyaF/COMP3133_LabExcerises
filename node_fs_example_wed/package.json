@@ -1,0 +1,12 @@
+{
+  "name": "node_fs_example",
+  "version": "1.0.0",
+  "description": "Sample node File System Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["fs", "nodejs", "API"],
+  "author": "Pritesh Patel",
+  "license": "ISC"
+}

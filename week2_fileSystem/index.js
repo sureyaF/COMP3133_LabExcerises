@@ -1,6 +1,7 @@
 const fs = require('fs')
 const csv = require('csv-parser');
 const filepath = "input_countries.csv"
+fs.unlink()
 fs.unlink('canada.txt',
     (err) => {
         if (err) {
@@ -23,7 +24,7 @@ fs.unlink('usa.txt',
 const storeResult = [];
 var canadaRes = [];
 fs.createReadStream('input_countries.csv')
-    .pipe(csv())
+    fs.pipe(csv())
     .on('data', (data) => storeResult.push(data))
     .on('end', () => {
         for (var result of storeResult) {

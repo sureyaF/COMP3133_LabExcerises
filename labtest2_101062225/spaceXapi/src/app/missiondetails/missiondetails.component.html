@@ -1,0 +1,28 @@
+<h1 style="color: blue;"> SpaceX Mission Details</h1>
+<div class="card mb-3" style="max-width: 540px;"    >
+    <div class="row no-gutters" >
+      <div class="col-md-4" >
+        <img class="card-img" [src]="data.links.mission_patch"  >
+      </div>
+      <div class="col-md-8"  >
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">{{data.mission_name}}</h5>
+          <p class="card-text"> <strong>Launch Details <br></strong> {{data.details}}</p>
+          <p class="card-text"><strong> Flight Number: </strong>{{data.flight_number}}</p>
+          <p class="card-text"><small class="text-muted"> <strong>Year: </strong> {{data.launch_year}}</small></p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Rocket<br></strong> rocket name: {{data.rocket.rocket_name}} <br> rocket type: {{data.rocket.rocket_type}}</li>
+            <li class="list-group-item"><strong>Launch Details <br></strong>
+             <a href={{data.links.video_link}}><i class="bi bi-youtube"></i></a>  &nbsp;&nbsp;
+             <a href={{data.links.wikipedia}}><i class="bi bi-globe"></i></a>  &nbsp;&nbsp;
+             <a href={{data.article_link}}><i class="bi bi-info-square-fill"></i></a>
+             
+            </li>
+            <li class="list-group-item">created by: Sureya Farah - 101062225</li>
+          </ul>
+        
+
+      </div>
+    </div>
+  </div>
